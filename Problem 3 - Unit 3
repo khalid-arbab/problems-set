@@ -1,0 +1,22 @@
+balance=320000
+annualinterestrate=0.2
+
+monthlyinterestrate=annualinterestrate/12.0
+
+low=balance/12.0
+high=(balance*((1+monthlyinterestrate)**12))/12.0
+
+while abs(high-low)>0.005:
+  payment=(low+high)/2.0
+  current_balance=balance
+
+  for month in range(12):
+     unpaid=current_balance-payment
+     current_balance=unpaid+(monthlyinterestrate*unpaid)
+
+  if current_balance>0:
+    low=payment
+  else:
+    high=payment
+
+print("lpwest payment:", round(payment, 2))
