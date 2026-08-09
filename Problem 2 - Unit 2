@@ -1,0 +1,18 @@
+balance=3329
+annualinterestrate=0.2
+monthlyinterestrate=annualinterestrate/12.0
+payment=10
+
+while True:
+  current_balance=balance
+
+  for month in range(12):
+    unpaid=current_balance-payment
+    current_balance=unpaid+(monthlyinterestrate*unpaid)
+
+  if current_balance<=0:
+    break  
+
+  payment+=10
+
+print("lowest payment", payment)
