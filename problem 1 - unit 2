@@ -1,13 +1,12 @@
-
 balance = 42
-annualInterestRate = 0.2
-monthlyPaymentRate = 0.04
+annualinterestrate= 0.2
+monthlypaymentrate= 0.04
 
-monthlyInterestRate = annualInterestRate / 12.0
+monthlyinterestrate=annualinterestrate/12.0
 
 for month in range(12):
-    minimumPayment = monthlyPaymentRate * balance
-    unpaidBalance = balance - minimumPayment
-    balance = unpaidBalance + (monthlyInterestRate * unpaidBalance)
+  minimumpayment= monthlypaymentrate*balance
+  unpaidbalance= balance-minimumpayment
+  balance= unpaidbalance + (monthlyinterestrate*unpaidbalance)
 
-print("Remaining balance:", round(balance, 2))
+print("remaning balance:", round(balance, 2))
